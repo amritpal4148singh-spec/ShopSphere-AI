@@ -1,0 +1,43 @@
+{
+  "note": "Seed data for the mock recommendation engine (PRD 10.3): simulated co-purchase strength between categories (frequently bought together), simulated category popularity (trending), and the rule for the Featured rail. There is no live order data to learn from, so these stand in for it.",
+  "categoryPairs": [
+    { "a": "smartphones", "b": "mobile-accessories", "strength": 0.9 },
+    { "a": "tablets", "b": "mobile-accessories", "strength": 0.8 },
+    { "a": "laptops", "b": "mobile-accessories", "strength": 0.6 },
+    { "a": "laptops", "b": "tablets", "strength": 0.4 },
+    { "a": "smartphones", "b": "tablets", "strength": 0.4 },
+    { "a": "mens-shoes", "b": "sports-accessories", "strength": 0.7 },
+    { "a": "mens-shoes", "b": "mens-shirts", "strength": 0.6 },
+    { "a": "mens-shoes", "b": "mens-watches", "strength": 0.5 },
+    { "a": "mens-shirts", "b": "mens-watches", "strength": 0.5 },
+    { "a": "womens-dresses", "b": "womens-bags", "strength": 0.8 },
+    { "a": "womens-dresses", "b": "womens-shoes", "strength": 0.8 },
+    { "a": "womens-dresses", "b": "womens-jewellery", "strength": 0.7 },
+    { "a": "womens-bags", "b": "womens-shoes", "strength": 0.5 },
+    { "a": "womens-watches", "b": "womens-jewellery", "strength": 0.6 },
+    { "a": "tops", "b": "womens-bags", "strength": 0.5 },
+    { "a": "tops", "b": "womens-jewellery", "strength": 0.5 },
+    { "a": "sunglasses", "b": "womens-bags", "strength": 0.4 },
+    { "a": "sunglasses", "b": "mens-watches", "strength": 0.4 },
+    { "a": "beauty", "b": "skin-care", "strength": 0.8 },
+    { "a": "beauty", "b": "fragrances", "strength": 0.6 },
+    { "a": "skin-care", "b": "fragrances", "strength": 0.4 },
+    { "a": "furniture", "b": "home-decoration", "strength": 0.8 },
+    { "a": "home-decoration", "b": "kitchen-accessories", "strength": 0.5 },
+    { "a": "kitchen-accessories", "b": "groceries", "strength": 0.5 },
+    { "a": "motorcycle", "b": "vehicle", "strength": 0.4 }
+  ],
+  "sameCategoryStrength": 0.2,
+  "trendingCategoryBoost": {
+    "smartphones": 0.9,
+    "fragrances": 0.85,
+    "laptops": 0.8,
+    "womens-dresses": 0.75,
+    "mens-shoes": 0.7,
+    "sunglasses": 0.7,
+    "beauty": 0.65,
+    "womens-bags": 0.6
+  },
+  "defaultTrendingBoost": 0.3,
+  "featured": { "minDiscount": 10, "maxPerCategory": 2 }
+}

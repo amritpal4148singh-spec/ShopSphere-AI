@@ -1,0 +1,56 @@
+{
+  "note": "Seed structure for the admin recommendation-analytics panel (PRD 8.4, 10.3). These are SIMULATED sample counts so the panel is demonstrable on a fresh browser; real events tracked on this device are added on top and the baseline can be switched off. simulatedVisits is the visit count behind the simulated conversion rate on the admin overview (orders divided by visits).",
+  "simulatedVisits": 260,
+  "strategies": {
+    "recently-viewed": {
+      "impressions": 520,
+      "clicks": 61,
+      "conversions": 9
+    },
+    "similar": {
+      "impressions": 740,
+      "clicks": 96,
+      "conversions": 15
+    },
+    "category-based": {
+      "impressions": 410,
+      "clicks": 37,
+      "conversions": 5
+    },
+    "price-based": {
+      "impressions": 260,
+      "clicks": 19,
+      "conversions": 2
+    },
+    "wishlist-based": {
+      "impressions": 180,
+      "clicks": 24,
+      "conversions": 7
+    },
+    "cart-based": {
+      "impressions": 330,
+      "clicks": 52,
+      "conversions": 18
+    },
+    "frequently-bought-together": {
+      "impressions": 390,
+      "clicks": 58,
+      "conversions": 16
+    },
+    "trending": {
+      "impressions": 860,
+      "clicks": 88,
+      "conversions": 10
+    },
+    "personalized": {
+      "impressions": 640,
+      "clicks": 93,
+      "conversions": 14
+    },
+    "featured": {
+      "impressions": 700,
+      "clicks": 71,
+      "conversions": 8
+    }
+  }
+}

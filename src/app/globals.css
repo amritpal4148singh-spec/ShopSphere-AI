@@ -1,0 +1,508 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens: "Minimal Luxury" (warm ivory and cream, deep navy, champagne gold).
+ *
+ * Two layers. LAYER 1 is the raw palette. LAYER 2 is the semantic roles that components consume (`bg-background`,
+ * `text-muted-foreground`, `bg-cta`, ...). Components never use raw palette names or hex values, so the palette can be
+ * retuned here and nowhere else. Every foreground/background pairing below was checked against WCAG 2.x; the full matrix
+ * is in docs/COLOUR-SYSTEM.md.
+ *
+ * CHAMPAGNE GOLD RULES. Gold (#C9A96A) is 2.0:1 on ivory, so it must never be body or label TEXT on light surfaces.
+ * It may be: a button fill carrying dark navy text (8.1:1); decoration, hairlines and icons; any mark on a navy surface
+ * (8.1:1); a focus ring on navy surfaces. For gold-coloured text on a light surface use --gold-ink (5.8:1).
+ */
+:root {
+  /* ---- LAYER 1: raw palette ---- */
+  --ivory: #f8f3e9;
+  --cream: #fffcf6;
+  --sand: #efe6d3;
+  --sand-deep: #e4d8bf;
+  --surface: var(--cream); /* alias used by image-panel gradients */
+
+  --navy: #14233f;
+  --navy-hover: #0d1a31;
+  --navy-deep: #0b1629;
+  --navy-soft: #1e3156;
+  --harbour: #2c4270;
+  --navy-tint: #e7eaf2;
+
+  --gold: #c9a96a;
+  --gold-hover: #d6b97c;
+  --gold-press: #bf9c55;
+  --gold-light: #e3cd9b;
+  --gold-ink: #775a1e;
+  --gold-edge: #957634;
+  --gold-tint: #f3e9cf;
+  --star: #9a7425;
+
+  --text: #121c33;
+  --text-secondary: #3d4559;
+  --text-muted: #5a5f70;
+  --text-placeholder: #686c7b;
+  --hairline: #e2d8c3;
+  --border-control: #857d69;
+
+  --sale: #a6232b;
+  --sale-hover: #8f1c24;
+  --error: #b3261e;
+  --error-soft: #fbe9e7;
+  /* Error text on navy surfaces (the footer): #b3261e would fail contrast there; this tint is about 10:1 on navy. */
+  --error-on-dark: #ffb9b1;
+  --success: #1b6b47;
+  --success-soft: #e3f1e8;
+  --warning: #7a4b00;
+  --warning-soft: #fbefd0;
+  --info: #1f4e8c;
+  --info-soft: #e4edf8;
+
+  /* ---- LAYER 2: semantic roles ---- */
+  --background: var(--ivory); /* page */
+  --foreground: var(--text); /* primary text */
+  --card: var(--cream); /* elevated surfaces: cards, inputs, dialogs */
+  --card-foreground: var(--text);
+  --muted: var(--sand); /* secondary background: bands, image panels, skeletons */
+  --muted-foreground: var(--text-muted);
+  --border: var(--hairline); /* dividers and card edges (decorative) */
+  --input: var(--border-control); /* edges of interactive controls (3:1) */
+  --ring: var(--navy);
+  --primary: var(--navy); /* brand: primary buttons, selected states, links */
+  --primary-foreground: var(--ivory);
+  --secondary: var(--sand); /* secondary buttons */
+  --secondary-foreground: var(--navy);
+  --accent: var(--navy-tint); /* hover and selected backgrounds */
+  --accent-foreground: var(--navy);
+  --destructive: var(--error);
+  --destructive-foreground: #ffffff;
+  --cta: var(--gold); /* the shopping action: Add to Cart, Buy Now, Browse products */
+  --cta-foreground: var(--navy-deep);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, "Times New Roman", serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-surface: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--navy-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-hover: var(--sand-deep);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-on-dark: var(--error-on-dark);
+  --color-ink: var(--navy-deep);
+  --color-ink-soft: var(--navy-soft);
+  --color-harbour: var(--harbour);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-hover: var(--gold-hover);
+  --color-cta-press: var(--gold-press);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-ink: var(--gold-ink);
+  --color-gold-edge: var(--gold-edge);
+  --color-gold-tint: var(--gold-tint);
+  --color-star: var(--star);
+  --color-sale: var(--sale);
+  --color-sale-hover: var(--sale-hover);
+  --color-sale-foreground: #ffffff;
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --shadow-surface: 0 1px 0 rgb(18 28 51 / 0.03), 0 14px 30px -22px rgb(18 28 51 / 0.38);
+  --shadow-lift: 0 2px 0 rgb(18 28 51 / 0.03), 0 26px 40px -20px rgb(20 35 63 / 0.4);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+/* Motion vocabulary. Each animation is named for what it does so call sites read clearly. */
+@theme {
+  --animate-rise: rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-settle: settle 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-float-slow: float 12s ease-in-out infinite;
+  --animate-orbit: orbit 40s linear infinite;
+  --animate-pop: pop 460ms cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  --animate-launcher-in: launcher-in 640ms cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+  --animate-pulse: shimmer 1.8s linear infinite;
+  --animate-page-in: page-in 380ms ease-out both;
+  --animate-panel-in: panel-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-drop-in: drop-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-ping-twice: ping-twice 1.6s cubic-bezier(0, 0, 0.2, 1) 2s 2 both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 18px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes settle {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes launcher-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 16px, 0) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -100% 0;
+    }
+  }
+  @keyframes page-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0); /* no scale: the panel's measured size is the same from the first frame */
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes drop-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -8px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes ping-twice {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    80%,
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    background: var(--navy);
+    color: var(--ivory);
+  }
+
+  /* Each route's content eases in on arrival (opacity only, so it can never shift layout or trap fixed children). */
+  main > * {
+    animation: var(--animate-page-in);
+  }
+
+  /* The mobile menu drops in instead of snapping open. */
+  #mobile-nav:not([hidden]) {
+    animation: var(--animate-drop-in);
+  }
+
+  /* PRD section 14: visible focus state on every interactive element. Navy on light surfaces (14:1 on ivory); on navy
+     surfaces the ring turns champagne gold (8:1), since navy on navy would vanish. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  /* Navy surfaces re-point the ring token, so every ring style (outline, ring-*, has-[:focus-visible]) follows. */
+  .on-dark,
+  .home-rails > section:nth-of-type(2) {
+    --ring: var(--gold);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      animation-delay: 0s !important; /* staggered entrances must not hold content hidden */
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Type scale shared by every screen: one display voice for page and section titles. */
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.75rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  /* Skeletons shimmer: a soft highlight sweeps across the placeholder instead of the whole block throbbing. */
+  .animate-pulse {
+    background-image: linear-gradient(100deg, transparent 25%, rgb(255 251 243 / 0.8) 50%, transparent 75%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+  }
+  /* ---------------------------------------------------------------- navigation */
+
+  /* A primary-colour underline that draws in from the left. Also shown for the current page when marked with aria-current. */
+  .nav-link {
+    position: relative;
+    padding-block: 0.25rem;
+    transition: color 200ms ease;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -2px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gold-edge);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  /* ---------------------------------------------------------------- horizontal scrollers */
+
+  /* Fades the ends of a sideways scroller so it is clear there is more, without arrows or extra markup. */
+  .scroll-fade {
+    --fade: 1rem; /* never larger than the page gutter, so the bleed cannot cause sideways page scroll */
+    padding-inline: var(--fade);
+    margin-inline: calc(var(--fade) * -1);
+    scroll-padding-inline: var(--fade);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--primary) 45%, transparent) transparent;
+  }
+  @media (min-width: 40rem) {
+    .scroll-fade {
+      --fade: 1.25rem;
+    }
+  }
+
+  /* A grid-layout rail stops being a scroller from the large breakpoint, so the fade and bleed are switched off. */
+  @media (min-width: 64rem) {
+    .scroll-fade[data-layout="grid"] {
+      padding-inline: 0;
+      margin-inline: 0;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+
+  /* ---------------------------------------------------------------- home page */
+
+  /* Home page gutters: full-bleed bands whose content still lines up with the centred, max-width page grid. */
+  .home-page {
+    --gutter: 1rem;
+    --page-inline: max(var(--gutter), calc((100% - 96rem) / 2 + var(--gutter)));
+    --band: color-mix(in srgb, var(--sand) 55%, var(--background));
+  }
+  @media (min-width: 40rem) {
+    .home-page {
+      --gutter: 1.5rem;
+    }
+  }
+  @media (min-width: 64rem) {
+    .home-page {
+      --gutter: 2rem;
+    }
+  }
+  .home-band {
+    padding-inline: var(--page-inline);
+  }
+
+  /* Rails: alternating bands. Spacing is owned here so the rail component's own margin does not stack on top. */
+  .home-rails > section {
+    margin-top: 0;
+    padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+    padding-inline: var(--page-inline);
+  }
+  .home-rails > section:nth-of-type(even) {
+    background: var(--band);
+  }
+  /* The second shelf (Trending) is the page's navy moment: ivory type, cream cards. Secondary text stays 8:1. */
+  .home-rails > section:nth-of-type(2) {
+    background: var(--navy-deep);
+    color: var(--ivory);
+  }
+  .home-rails > section:nth-of-type(2) .text-muted-foreground {
+    color: color-mix(in srgb, var(--ivory) 72%, var(--navy-deep));
+  }
+
+  /* Discount badges ease in on the home page only, where the shopper's eye is still arriving. */
+  .home-rails [data-discount-badge],
+  .hero-stage [data-discount-badge] {
+    animation: var(--animate-pop);
+    animation-delay: 500ms;
+  }
+
+  /* Hero stage: pointer parallax reads --px/--py (-1 to 1) which the component sets while a mouse is over it. */
+  .hero-parallax {
+    transform: translate3d(calc(var(--px, 0) * var(--depth, 0px)), calc(var(--py, 0) * var(--depth, 0px)), 0);
+    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+}
+
+/* ---------------------------------------------------------------- scroll-driven effects (progressive enhancement) */
+
+/*
+ * These use CSS scroll-driven animations: no JavaScript, no hydration concerns. Browsers without support simply show the
+ * final state. They are fully disabled under reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .home-rails > section > * {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+  /* Scroll storytelling: as the hero leaves, its product stage drifts up and softens, so the page hands over to the shelves. */
+  @supports (animation-timeline: view()) {
+    .hero-stage {
+      animation: hero-drift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes hero-drift {
+      to {
+        transform: translate3d(0, -56px, 0);
+        opacity: 0.25;
+      }
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .site-header {
+      animation: header-elevate linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 120px;
+    }
+    @keyframes header-elevate {
+      from {
+        box-shadow: 0 0 0 0 rgb(18 28 51 / 0);
+      }
+      to {
+        box-shadow: 0 10px 30px -18px rgb(18 28 51 / 0.45);
+      }
+    }
+  }
+}
+
+/* Printing shows everything: a reveal that depends on scroll position must never hide content on paper. */
+@media print {
+  .home-rails > section > *,
+  .site-header {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "note": "Sample order records covering every tracking status (PRD 10.3). Times are hours before the moment the demo customer's orders are first created; stage offsets are hours after the order was placed.",
+  "stageOffsetHours": { "placed": 0, "confirmed": 1, "packed": 6, "shipped": 20, "out-for-delivery": 44, "delivered": 50 },
+  "orders": [
+    { "id": "SS-DEMO-0001", "status": "delivered", "placedHoursAgo": 240, "delivery": "standard", "payment": "mock-card", "items": [{ "productId": 6, "title": "Calvin Klein CK One", "unitPrice": 4249, "quantity": 1 }, { "productId": 4, "title": "Red Lipstick", "unitPrice": 1104, "quantity": 2 }] },
+    { "id": "SS-DEMO-0002", "status": "out-for-delivery", "placedHoursAgo": 50, "delivery": "express", "payment": "mock-upi", "items": [{ "productId": 7, "title": "Chanel Coco Noir Eau De", "unitPrice": 11049, "quantity": 1 }] },
+    { "id": "SS-DEMO-0003", "status": "shipped", "placedHoursAgo": 30, "delivery": "standard", "payment": "mock-card", "items": [{ "productId": 2, "title": "Eyeshadow Palette with Mirror", "unitPrice": 1699, "quantity": 1 }, { "productId": 3, "title": "Powder Canister", "unitPrice": 1274, "quantity": 1 }] },
+    { "id": "SS-DEMO-0004", "status": "packed", "placedHoursAgo": 10, "delivery": "standard", "payment": "mock-cod", "items": [{ "productId": 5, "title": "Red Nail Polish", "unitPrice": 764, "quantity": 3 }] },
+    { "id": "SS-DEMO-0005", "status": "confirmed", "placedHoursAgo": 3, "delivery": "priority", "payment": "mock-upi", "items": [{ "productId": 1, "title": "Essence Mascara Lash Princess", "unitPrice": 849, "quantity": 1 }] },
+    { "id": "SS-DEMO-0006", "status": "placed", "placedHoursAgo": 0.2, "delivery": "standard", "payment": "mock-card", "items": [{ "productId": 4, "title": "Red Lipstick", "unitPrice": 1104, "quantity": 1 }] }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "note": "Reference fixture for the shape of derived preference signals (PRD 10.3): preferred categories and a price band. ShopSphere derives these live from a shopper's own activity (services/recommendations/signals.ts) and never stores them. toDerivedPreferences() in services/recommendations/preferences.ts produces this same shape, and a test checks both stay in step. The demo customer below is illustrative.",
+  "profiles": [
+    {
+      "userId": "user-seed-customer",
+      "priceBand": { "min": 499, "max": 4999 },
+      "preferredCategories": ["mobile-accessories", "smartphones"],
+      "preferredBrands": ["Apple"],
+      "recentSearches": ["headphones"],
+      "confidence": 0.4
+    }
+  ]
+}

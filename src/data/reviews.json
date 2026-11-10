@@ -1,0 +1,236 @@
+{
+  "note": "Sample review records (PRD 10.3): ratings, verified-purchase flags and helpful counts, keyed by DummyJSON product id. The text is deliberately generic because DummyJSON ids are not verified against a live catalogue. Reviews written by shoppers on this device are stored separately in local storage.",
+  "reviews": [
+    {
+      "id": "sample-001",
+      "productId": 8,
+      "authorName": "Kavita Menon",
+      "rating": 5,
+      "body": "Exactly as described and it arrived two days early. The packaging was careful and nothing was damaged.",
+      "date": "2026-09-28",
+      "verifiedPurchase": true,
+      "helpful": 14,
+      "notHelpful": 1
+    },
+    {
+      "id": "sample-002",
+      "productId": 8,
+      "authorName": "Rohan Desai",
+      "rating": 4,
+      "body": "Good quality for the price. Setup took a few minutes and it has worked well for a month so far.",
+      "date": "2026-09-11",
+      "verifiedPurchase": true,
+      "helpful": 6,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-003",
+      "productId": 8,
+      "authorName": "Imran Sheikh",
+      "rating": 2,
+      "body": "It works, but the finish looked different from the photos and the instructions were hard to follow.",
+      "date": "2026-08-30",
+      "verifiedPurchase": false,
+      "helpful": 9,
+      "notHelpful": 3
+    },
+    {
+      "id": "sample-004",
+      "productId": 9,
+      "authorName": "Neha Kapoor",
+      "rating": 5,
+      "body": "Better than I expected. I have recommended it to two friends already and both were happy.",
+      "date": "2026-10-04",
+      "verifiedPurchase": true,
+      "helpful": 11,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-005",
+      "productId": 9,
+      "authorName": "Arjun Pillai",
+      "rating": 3,
+      "body": "Decent, though delivery took longer than the estimate. The product itself is fine for everyday use.",
+      "date": "2026-09-02",
+      "verifiedPurchase": true,
+      "helpful": 4,
+      "notHelpful": 1
+    },
+    {
+      "id": "sample-006",
+      "productId": 10,
+      "authorName": "Sana Qureshi",
+      "rating": 4,
+      "body": "Solid build and good value. I would buy again; the only small complaint is the thin user guide.",
+      "date": "2026-10-12",
+      "verifiedPurchase": true,
+      "helpful": 8,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-007",
+      "productId": 10,
+      "authorName": "Vikram Rao",
+      "rating": 5,
+      "body": "Very happy. It does everything I needed and the seller packed it well.",
+      "date": "2026-09-19",
+      "verifiedPurchase": false,
+      "helpful": 5,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-008",
+      "productId": 10,
+      "authorName": "Deepa Nair",
+      "rating": 1,
+      "body": "Arrived with a scratch and the replacement process was slow. Hoping the next batch is better.",
+      "date": "2026-08-14",
+      "verifiedPurchase": true,
+      "helpful": 12,
+      "notHelpful": 2
+    },
+    {
+      "id": "sample-009",
+      "productId": 10,
+      "authorName": "Karan Malhotra",
+      "rating": 4,
+      "body": "Works as advertised. Fit and finish are good, and it feels like it will last.",
+      "date": "2026-07-29",
+      "verifiedPurchase": false,
+      "helpful": 3,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-010",
+      "productId": 11,
+      "authorName": "Pooja Iyer",
+      "rating": 5,
+      "body": "Great purchase. Looks premium, feels sturdy, and the price was fair compared to other shops.",
+      "date": "2026-10-09",
+      "verifiedPurchase": true,
+      "helpful": 7,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-011",
+      "productId": 11,
+      "authorName": "Faisal Ahmed",
+      "rating": 3,
+      "body": "Average. Not bad, not outstanding. It does the job but I expected a little more at this price.",
+      "date": "2026-09-05",
+      "verifiedPurchase": false,
+      "helpful": 2,
+      "notHelpful": 1
+    },
+    {
+      "id": "sample-012",
+      "productId": 12,
+      "authorName": "Lakshmi Reddy",
+      "rating": 4,
+      "body": "Reliable and easy to use. Delivery was quick and the item matched the listing.",
+      "date": "2026-10-02",
+      "verifiedPurchase": true,
+      "helpful": 5,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-013",
+      "productId": 12,
+      "authorName": "Siddharth Jain",
+      "rating": 5,
+      "body": "Superb. Have been using it daily for weeks and it still looks new.",
+      "date": "2026-09-15",
+      "verifiedPurchase": true,
+      "helpful": 10,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-014",
+      "productId": 12,
+      "authorName": "Tanvi Shah",
+      "rating": 2,
+      "body": "Smaller than I thought from the pictures. Quality is acceptable, but check the size before ordering.",
+      "date": "2026-08-21",
+      "verifiedPurchase": false,
+      "helpful": 6,
+      "notHelpful": 1
+    },
+    {
+      "id": "sample-015",
+      "productId": 13,
+      "authorName": "Manish Gupta",
+      "rating": 5,
+      "body": "Perfect gift. The recipient loved it and the gift wrapping option was a nice touch.",
+      "date": "2026-10-14",
+      "verifiedPurchase": true,
+      "helpful": 4,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-016",
+      "productId": 13,
+      "authorName": "Ritu Bansal",
+      "rating": 4,
+      "body": "Nice product and good packaging. Took one extra day to arrive but no real complaint.",
+      "date": "2026-09-23",
+      "verifiedPurchase": false,
+      "helpful": 1,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-017",
+      "productId": 14,
+      "authorName": "Aman Verma",
+      "rating": 3,
+      "body": "It is okay. Does what it says, though I would like a better warranty.",
+      "date": "2026-10-07",
+      "verifiedPurchase": true,
+      "helpful": 3,
+      "notHelpful": 2
+    },
+    {
+      "id": "sample-018",
+      "productId": 14,
+      "authorName": "Shreya Das",
+      "rating": 5,
+      "body": "Excellent. Worth every rupee and the support team answered my question the same day.",
+      "date": "2026-09-30",
+      "verifiedPurchase": true,
+      "helpful": 9,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-019",
+      "productId": 14,
+      "authorName": "Harish Kumar",
+      "rating": 1,
+      "body": "Stopped working after a week. Hopefully a one-off, but I am disappointed.",
+      "date": "2026-09-01",
+      "verifiedPurchase": true,
+      "helpful": 13,
+      "notHelpful": 2
+    },
+    {
+      "id": "sample-020",
+      "productId": 20,
+      "authorName": "Nisha Agarwal",
+      "rating": 5,
+      "body": "Lovely quality. Would definitely order again.",
+      "date": "2026-10-16",
+      "verifiedPurchase": true,
+      "helpful": 2,
+      "notHelpful": 0
+    },
+    {
+      "id": "sample-021",
+      "productId": 20,
+      "authorName": "Gaurav Singh",
+      "rating": 4,
+      "body": "Good overall. A few minor issues with packaging, but the product is great.",
+      "date": "2026-09-26",
+      "verifiedPurchase": false,
+      "helpful": 1,
+      "notHelpful": 0
+    }
+  ]
+}
